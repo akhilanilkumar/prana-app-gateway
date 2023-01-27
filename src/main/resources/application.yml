@@ -1,0 +1,35 @@
+server:
+  port: 8080
+management:
+  endpoint:
+    web:
+      exposure:
+        include:"*'
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: api
+          uri: http://localhost:9080
+          predicates:
+            - Path=/api/**
+        - id: ui
+          uri: http://localhost:3000
+          predicates:
+            - Path=/**
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 79425889a0b5960dcc3d
+            client-secret: b1b1e2ecd2c6240f6f9582aff4b57974619669f8
+#            scope:
+#              - user:email
+#              - read:user
+#            authorization-grant-type: authorization_code
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+#            client-authentication-method: post
+#            client-name: GitHub
