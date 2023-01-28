@@ -11,10 +11,10 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: api
+        - id: inventory-api
           uri: http://localhost:9080
           predicates:
-            - Path=/api/**
+            - Path=/inventory/api/**
         - id: ui
           uri: http://localhost:3000
           predicates:
