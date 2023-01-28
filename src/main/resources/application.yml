@@ -26,6 +26,9 @@ spring:
           github:
             client-id: 79425889a0b5960dcc3d
             client-secret: b1b1e2ecd2c6240f6f9582aff4b57974619669f8
+    user:
+      name: admin
+      password: admin
 #            scope:
 #              - user:email
 #              - read:user
